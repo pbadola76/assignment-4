@@ -4,6 +4,12 @@
  * @author (Puja Badola)
  * Date (2/14/2020)
  */
+/**
+ * Quick Sort
+ * 
+ * @author (Puja Badola)
+ * Date (2/14/2020)
+ */
 public class QuickSort implements SortingAlgorithm
 {
 	public void sort(int [] a)
@@ -11,30 +17,30 @@ public class QuickSort implements SortingAlgorithm
 		sort(a, 0, a.length-1);
 	}
 
-	public void sort(int [] a, int start, int end)
+	public void sort(int [] a, int left, int right)
 	{
-		int p = partition(a,start, end);
-		if(start < p-1)
+		int p = partition(a,left, right);
+		if(left < p-1)
 		{
-			sort(a,start,p-1);
+			sort(a,left,p-1);
 		}
-		if(p<end)
+		if(p<right)
 		{
-			sort(a,p,end);
+			sort(a,p,right);
 		}
 	}
-	public int partition (int [] a, int start, int end)
+	public int partition (int [] a, int left, int right)
 	{
-		int pivot = end;
-		int i = start;
-		int k = start;
+		int pivot =left;
+		int i = left;
+		int k = right;
 
 		while(i<=k)
 		{
-			while(a[i] < a[pivot])
+			while(a[i] < a[pivot]) 
 				i++;
 			
-			while(a[k] > a[pivot])
+			while(a[k] > a[pivot]) 
 				k--;
 			
 			if(i<=k)
@@ -49,3 +55,4 @@ public class QuickSort implements SortingAlgorithm
       return i;   
 	}
 }
+
