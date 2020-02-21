@@ -25,7 +25,7 @@ public class QuickSort implements SortingAlgorithm
 	}
 	public int partition (int [] a, int start, int end)
 	{
-		int pivot = start;
+		int pivot = end;
 		int i = start;
 		int k = start;
 
